@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://l5vyja4pslus"]
+[gd_scene load_steps=4 format=3 uid="uid://l5vyja4pslus"]
 
 [ext_resource type="Texture2D" uid="uid://cggtbxcp506c0" path="res://assets/Base.png" id="1_4wo6c"]
 [ext_resource type="PackedScene" uid="uid://cumbwvsj3m0sx" path="res://turret.tscn" id="2_jtqln"]
+[ext_resource type="PackedScene" uid="uid://dut71n16pndml" path="res://bullet.tscn" id="3_ija7f"]
 
 [node name="MainRoom" type="Node2D"]
 
@@ -12,3 +13,6 @@ texture = ExtResource("1_4wo6c")
 
 [node name="turret" parent="." instance=ExtResource("2_jtqln")]
 position = Vector2(552, 595)
+
+[node name="bullet" parent="." instance=ExtResource("3_ija7f")]
+position = Vector2(314, 359)
