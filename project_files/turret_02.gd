@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const BulletScene = preload('res://bullet_02.tscn')
+var BulletScene = preload('res://bullet_02.tscn')
 
 func _physics_process(_delta):
 	var mouse_pos = get_global_mouse_position()
@@ -11,12 +11,17 @@ func _physics_process(_delta):
 
 func shoot():
 	print('spawning bullet')
-	var bullet_instance = BulletScene.instance()
+	var bullet_instance = BulletScene.instantiate()  # Make sure to use `.instance()` here
 	
-	var offset = Vector2(0, -1).rotated(rotation) * 30
+	var offset = Vector2(1, 0).rotated(rotation) * 30
 	bullet_instance.global_position = global_position + offset
+
+	# Here we set the bullet's rotation to match the turret's rotation.
+	bullet_instance.rotation = rotation
 	
 	# Assuming the bullet script uses 'direction' as a property.
+	# This line might be unnecessary if the bullet's script automatically
+	# sets its movement based on its rotation. If not, it's required.
 	bullet_instance.direction = Vector2(cos(rotation), sin(rotation)).normalized()
 	
 	# Add bullet instance to the scene tree
