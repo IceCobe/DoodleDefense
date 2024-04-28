@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dut71n16pndml"]
+
+[ext_resource type="Texture2D" uid="uid://bkxqj4yjf6qvt" path="res://assets/bullet.png" id="1_w5kkj"]
+
+[node name="bullet" type="Node2D"]
+
+[node name="bulletRigidBody" type="RigidBody2D" parent="."]
+
+[node name="bulletSprite" type="Sprite2D" parent="bulletRigidBody"]
+texture = ExtResource("1_w5kkj")
+
+[node name="bulletCollisionShape" type="CollisionShape2D" parent="bulletRigidBody"]
