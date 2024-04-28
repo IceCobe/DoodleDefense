@@ -19,7 +19,7 @@ target_position = Vector2(250, 0)
 
 [node name="ReloadTimer" type="Timer" parent="RayCast2D"]
 process_callback = 0
-wait_time = 0.1
+wait_time = 0.05
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

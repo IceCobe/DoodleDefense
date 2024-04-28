@@ -8,6 +8,7 @@ radius = 4.0
 height = 12.0
 
 [node name="bulletRigidBody" type="RigidBody2D"]
+mass = 0.03
 gravity_scale = 0.0
 script = ExtResource("1_cet0w")
 

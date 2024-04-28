@@ -10,7 +10,6 @@ func _physics_process(_delta):
 	rotation = angle
 
 func shoot():
-	print('spawning bullet')
 	var bullet_instance = BulletScene.instantiate()  # Make sure to use `.instance()` here
 	
 	var offset = Vector2(1, 0).rotated(rotation) * 30
@@ -28,5 +27,4 @@ func shoot():
 	get_parent().add_child(bullet_instance)
 
 func _on_reload_timer_timeout():
-	print('reload finished')
 	shoot()

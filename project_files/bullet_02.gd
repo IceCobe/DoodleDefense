@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 # Speed at which the bullet moves.
-var speed = 200
+var speed = 1000
 
 # Direction the bullet is traveling. Should be normalized.
 var direction = Vector2(1, 0)
