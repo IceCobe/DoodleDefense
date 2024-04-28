@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cumbwvsj3m0sx"]
+
+[ext_resource type="Texture2D" uid="uid://dl82vhtl61ma5" path="res://assets/dark screen dot.png" id="1_akjm6"]
+[ext_resource type="Script" path="res://turret.gd" id="1_w3gel"]
+
+[node name="turret" type="Node2D"]
+script = ExtResource("1_w3gel")
+
+[node name="BodySprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_akjm6")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -250)
+
+[node name="ReloadTimer" type="Timer" parent="RayCast2D"]
