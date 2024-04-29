@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxbr0xrrgdt0k"]
+[gd_scene load_steps=5 format=3 uid="uid://bxbr0xrrgdt0k"]
 
 [ext_resource type="Script" path="res://enemies/red_enemy.gd" id="1_atup3"]
 [ext_resource type="Texture2D" uid="uid://ccyk6ny1b4nvb" path="res://assets/red_circle.png" id="2_mo7g4"]
+[ext_resource type="PackedScene" uid="uid://cdqakwnnpi7ma" path="res://nodes/movement_node.tscn" id="3_4sfrk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yc8um"]
 radius = 16.1245
 
 [node name="red_enemy" type="RigidBody2D"]
 gravity_scale = 0.0
-angular_damp = 7.076
+angular_damp = 7.0
 script = ExtResource("1_atup3")
 
 [node name="red_enemy_collision_shape" type="CollisionShape2D" parent="."]
@@ -17,3 +18,5 @@ shape = SubResource("CircleShape2D_yc8um")
 [node name="red_enemy_sprite" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("2_mo7g4")
+
+[node name="movement_node" parent="." instance=ExtResource("3_4sfrk")]

@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://l5vyja4pslus"]
 
 [ext_resource type="Texture2D" uid="uid://cggtbxcp506c0" path="res://assets/mount.png" id="1_qto7h"]
-[ext_resource type="PackedScene" uid="uid://bmuy034b4smnp" path="res://players/turret_02.tscn" id="2_6i6e8"]
+[ext_resource type="PackedScene" uid="uid://bmuy034b4smnp" path="res://players/turret.tscn" id="2_6i6e8"]
 [ext_resource type="PackedScene" uid="uid://bskb17d3ksmlc" path="res://level_managers/spawner.tscn" id="3_vwy55"]
 
-[node name="MainRoom" type="Node2D"]
+[node name="main_room" type="Node2D"]
 
-[node name="Base" type="Sprite2D" parent="."]
-position = Vector2(552, 596)
+[node name="mount" type="Sprite2D" parent="."]
+position = Vector2(926, 1033)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_qto7h")
 
-[node name="turret_02" parent="." instance=ExtResource("2_6i6e8")]
-position = Vector2(552, 595)
+[node name="turret" parent="." instance=ExtResource("2_6i6e8")]
+position = Vector2(926, 1032)
 
-[node name="Spawner" parent="." instance=ExtResource("3_vwy55")]
-position = Vector2(460, 100)
+[node name="spawner" parent="." instance=ExtResource("3_vwy55")]
+position = Vector2(902, 89)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmuy034b4smnp"]
+
+[ext_resource type="Script" path="res://players/turret.gd" id="1_0w1eg"]
+[ext_resource type="Texture2D" uid="uid://dl82vhtl61ma5" path="res://assets/dark_green_circle.png" id="2_y0jck"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tw2kt"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5x1yd"]
+radius = 421.03
+
+[node name="turret" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_0w1eg")
+
+[node name="turret_sprite" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_y0jck")
+
+[node name="turret_hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tw2kt")
+
+[node name="turret_reload_timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.05
+autostart = true
+
+[node name="turret_range_area" type="Area2D" parent="."]
+
+[node name="turret_range_collision_shape" type="CollisionShape2D" parent="turret_range_area"]
+shape = SubResource("CircleShape2D_5x1yd")
+
+[connection signal="timeout" from="turret_reload_timer" to="." method="_on_reload_timer_timeout"]

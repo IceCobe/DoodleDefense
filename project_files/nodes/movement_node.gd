@@ -1,19 +1,11 @@
-extends RigidBody2D
+extends Node
 
-# Speed at which the enemy moves.
-@export var speed: float = 50
-@export var torque_strength: float = 1000
-
-func _physics_process(_delta):
-	move_forward()
-	rotate_towards_target()
+func rotate_towards_target(target_rotation):
+	var rotation_difference = fmod(target_rotation - get_parent().rotation + 3 * PI, 2 * PI) - PI
+	var torque = rotation_difference * get_parent().turn_speed
+	get_parent().apply_torque(torque)
 
 func move_forward():
-	var forward_dir = Vector2.RIGHT.rotated(rotation)
-	get_parent().move_and_collide(forward_dir * speed)
-
-func rotate_towards_target():
-	var target_rotation = PI / 2
-	var rotation_difference = fmod(target_rotation - rotation + 3 * PI, 2 * PI) - PI
-	var torque = rotation_difference * torque_strength
-	get_parent().apply_torque(torque)
+	var forward_dir = Vector2.RIGHT.rotated(get_parent().rotation)
+	var force = forward_dir * get_parent().speed
+	get_parent().apply_central_force(force)
