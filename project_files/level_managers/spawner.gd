@@ -1,6 +1,6 @@
 extends Node2D
 
-var EnemyScene = preload('res://enemies/enemy.tscn')
+var EnemyScene = preload('res://enemies/red_enemy.tscn')
 
 # Define the coordinate ranges for spawning enemies
 var x_range = Vector2(100, 1000)  # Enemies can spawn between x=100 and x=400

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var BulletScene = preload('res://components/bullet_02.tscn')
+var BulletScene = preload('res://components/bullet.tscn')
 
 func _physics_process(_delta):
 	var mouse_pos = get_global_mouse_position()

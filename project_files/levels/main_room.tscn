@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://l5vyja4pslus"]
 
-[ext_resource type="Texture2D" uid="uid://cggtbxcp506c0" path="res://assets/Base.png" id="1_qto7h"]
+[ext_resource type="Texture2D" uid="uid://cggtbxcp506c0" path="res://assets/mount.png" id="1_qto7h"]
 [ext_resource type="PackedScene" uid="uid://bmuy034b4smnp" path="res://players/turret_02.tscn" id="2_6i6e8"]
 [ext_resource type="PackedScene" uid="uid://bskb17d3ksmlc" path="res://level_managers/spawner.tscn" id="3_vwy55"]
 
